@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{title}}</h1>
+        <hr>
+        <form action="{{url_for('new_student')}}" method="post">
+            <div class="mb-3">
+                <label for="student_id" class="form-label">รหัสนักศึกษา</label>
+                <input name="student_id" type="text" class="form-control" id="student_id" placeholder="student id" required>
+            </div>
+            <div class="mb-3">
+                <label for="student_name" class="form-label">ชื่อ-นามสกุล</label>
+                <input name="student_name" type="text" class="form-control" id="student_name" placeholder="student name" required>
+            </div>
+            <div class="mb-3">
+                <label for="faculty" class="form-label">คณะที่นักศึกษาสังกัด</label>
+                <input name="faculty" type="text" class="form-control" id="faculty" placeholder="faculty name" required>
+            </div>
+            <button type="submit" class="btn btn-outline-primary">
+                <i class="bi bi-person-plus"></i> New Student
+            </button>
+        </form>
+    </div>
+{% endblock %}
